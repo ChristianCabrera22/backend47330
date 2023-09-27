@@ -11,7 +11,7 @@ class ProductManager {
         if (product) {
             return console.log("invalid code, existing")
         } else {
-              this.Products.push(
+            this.Products.push(
             {
                 id: this.Products.length + 1,
                 title,
@@ -26,11 +26,11 @@ class ProductManager {
         }
     }
 
-    getProdcuts() {
+    getProducts() {
         return this.Products
     }
 
-    getProdcutById(id) {
+    getProductById(id) {
         let product = this.Products.find(prod => prod.id === id)
         if (!product) {
             console.log("Product not found")
@@ -46,7 +46,7 @@ let productManager = new ProductManager();
 
 
 //Test:
-console.log("Products in db: ",productManager.getProdcuts());
+console.log("Products in db: ",productManager.getProducts());
 //formato: (title, description, price, thumbnail, code, stock)
 productManager.addProduct("prod1", "test1", 10, "img12.jpg", "prod2Test1", 11)
 productManager.addProduct("prod2", "test2", 20, "img13.jpg", "prod3Test1", 12)
@@ -56,5 +56,5 @@ productManager.addProduct("prod4", "test4", 40, "img15.jpg", "prod5Test1", 14)
 
 
 
-console.log("Products in db: ",productManager.getProdcuts());
-productManager.getProdcutById(2);
+console.log("Products in db: ",productManager.getProducts());
+productManager.getProductById(2);
